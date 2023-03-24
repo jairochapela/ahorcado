@@ -16,9 +16,7 @@ class PalabraSecreta:
         '''
         self.palabra = palabra
         self.letras = set({})
-    
-    # def __repr__(self) -> str:
-    #     return ' '.join([c if c in self.letras else '_' for c in self.palabra])
+
     
     def __repr__(self) -> str:
         '''
@@ -26,13 +24,21 @@ class PalabraSecreta:
         Se mostrará un _ con cada letra aún por adivinar y con la propia
         letra las que ya fueron adivinadas.
         '''
-        t = []
-        for c in self.palabra:
-            if c in self.letras:
-                t.append(c)
-            else:
-                t.append('_')
-        return ' '.join(t)
+        return ' '.join([c if c in self.letras else '_' for c in self.palabra])
+    
+    # def __repr__(self) -> str:
+    #     '''
+    #     Representación del objeto con la palabra secreta.
+    #     Se mostrará un _ con cada letra aún por adivinar y con la propia
+    #     letra las que ya fueron adivinadas.
+    #     '''
+    #     t = []
+    #     for c in self.palabra:
+    #         if c in self.letras:
+    #             t.append(c)
+    #         else:
+    #             t.append('_')
+    #     return ' '.join(t)
     
 
     def adivinarLetra(self, letra) -> bool:
